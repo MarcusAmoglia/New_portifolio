@@ -110,17 +110,19 @@ const getFallbackData = () => ({
 
 const loadFromJsonFile = async () => {
   try {
-    const r = await fetch('/data.json?t=' + Date.now())
+    // 👇 CORREÇÃO: Injeta o caminho base dinâmico do Vite (/ ou /New_portifolio/)
+    const baseUrl = import.meta.env.BASE_URL
+    const cleanBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
+    
+    const r = await fetch(`${cleanBase}data.json?t=` + Date.now())
     if (r.ok) return await r.json()
   } catch (e) { console.warn('Erro ao carregar data.json:', e) }
   return null
 }
 
-// Migração: se colors existir mas for objeto antigo (sem dark/light), converte
 const migrateColors = (data) => {
   if (!data.colors) return data
-  if (data.colors.dark && data.colors.light) return data // já novo formato
-  // Formato antigo: { primary, primaryHover, secondary, cardBg }
+  if (data.colors.dark && data.colors.light) return data
   const old = data.colors
   data.colors = {
     dark: {

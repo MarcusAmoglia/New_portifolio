@@ -1,4 +1,3 @@
-// src/pages/CertificationsPage.jsx
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -6,6 +5,14 @@ import { useData } from '../context/DataContext'
 import { useTranslation } from 'react-i18next'
 
 const ITEMS_PER_PAGE = 6
+
+ 
+const formatUrl = (url) => {
+  if (!url) return ''
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url
+  return `${import.meta.env.BASE_URL}${cleanUrl}`
+}
 
 const PdfModal = ({ certifications, currentIndex, onClose, lang }) => {
   const [index, setIndex] = useState(currentIndex)
@@ -25,6 +32,8 @@ const PdfModal = ({ certifications, currentIndex, onClose, lang }) => {
   }, [index])
 
   if (!currentCert) return null
+
+  const formattedPdfUrl = formatUrl(currentCert.pdf)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.95)' }} onClick={onClose}>
@@ -50,55 +59,59 @@ const PdfModal = ({ certifications, currentIndex, onClose, lang }) => {
             ))}
           </div>
         )}
-        <object data={currentCert.pdf} type="application/pdf" className="w-full h-full" title={currentCert.title?.[lang] || currentCert.title?.pt}>
-          <p className="text-center text-red-500 mt-20">Não foi possível exibir o PDF. <a href={currentCert.pdf} target="_blank" className="underline">Clique aqui</a></p>
+        <object data={formattedPdfUrl} type="application/pdf" className="w-full h-full" title={currentCert.title?.[lang] || currentCert.title?.pt}>
+          <p className="text-center text-red-500 mt-20">Não foi possível exibir o PDF. <a href={formattedPdfUrl} target="_blank" className="underline">Clique aqui</a></p>
         </object>
       </div>
     </div>
   )
 }
 
-const CertCard = ({ cert, lang, t, onOpen, index }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 24 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.55, delay: index * 0.08 }}
-    className="rounded-2xl overflow-hidden group transition-all duration-300"
-    style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
-    onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border-glow)'}
-    onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
-  >
-    <div className="aspect-video relative cursor-pointer overflow-hidden" onClick={() => onOpen(index)}>
-      <img
-        src={cert.preview}
-        alt={cert.title?.[lang] || cert.title?.pt}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        onError={e => { e.target.src = 'https://placehold.co/400x225/0d0d1a/00eeff?text=Certificado' }}
-      />
-      <div className="absolute inset-0 flex items-center justify-center transition-all" style={{ background: 'rgba(0,0,0,0.3)' }}>
-        <span className="text-white text-xs px-3 py-1.5 rounded-full" style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>Ver →</span>
-      </div>
-    </div>
-    <div className="p-5">
-      <h2 className="font-display font-bold text-base leading-snug mb-1" style={{ color: 'var(--text)' }}>
-        {cert.title?.[lang] || cert.title?.pt}
-      </h2>
-      <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>{cert.issuer?.[lang] || cert.issuer?.pt}</p>
-      <div className="flex items-center justify-between">
-        <div className="flex gap-3 text-xs" style={{ color: 'var(--text-subtle)' }}>
-          <span>{cert.hours}h</span><span>·</span><span>{cert.year}</span>
+const CertCard = ({ cert, lang, t, onOpen, index }) => {
+  const formattedPreviewUrl = formatUrl(cert.preview)
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, delay: index * 0.08 }}
+      className="rounded-2xl overflow-hidden group transition-all duration-300"
+      style={{ background: 'var(--bg-card)', border: '1px solid var(--border)' }}
+      onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--border-glow)'}
+      onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+    >
+      <div className="aspect-video relative cursor-pointer overflow-hidden" onClick={() => onOpen(index)}>
+        <img
+          src={formattedPreviewUrl}
+          alt={cert.title?.[lang] || cert.title?.pt}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={e => { e.target.src = 'https://placehold.co/400x225/0d0d1a/00eeff?text=Certificado' }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center transition-all" style={{ background: 'rgba(0,0,0,0.3)' }}>
+          <span className="text-white text-xs px-3 py-1.5 rounded-full" style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>Ver →</span>
         </div>
-        <button
-          onClick={() => onOpen(index)}
-          className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-all"
-          style={{ background: 'rgba(0,238,255,0.08)', color: 'var(--primary)', border: '1px solid var(--border-glow)' }}
-        >
-          {t('certifications.view_certificate')}
-        </button>
       </div>
-    </div>
-  </motion.div>
-)
+      <div className="p-5">
+        <h2 className="font-display font-bold text-base leading-snug mb-1" style={{ color: 'var(--text)' }}>
+          {cert.title?.[lang] || cert.title?.pt}
+        </h2>
+        <p className="text-xs mb-3" style={{ color: 'var(--text-muted)' }}>{cert.issuer?.[lang] || cert.issuer?.pt}</p>
+        <div className="flex items-center justify-between">
+          <div className="flex gap-3 text-xs" style={{ color: 'var(--text-subtle)' }}>
+            <span>{cert.hours}h</span><span>·</span><span>{cert.year}</span>
+          </div>
+          <button
+            onClick={() => onOpen(index)}
+            className="text-xs font-semibold px-3 py-1.5 rounded-lg transition-all"
+            style={{ background: 'rgba(0,238,255,0.08)', color: 'var(--primary)', border: '1px solid var(--border-glow)' }}
+          >
+            {t('certifications.view_certificate')}
+          </button>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 const CertificationsPage = () => {
   const { data } = useData()

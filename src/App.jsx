@@ -17,7 +17,6 @@ function ScrollToTop() {
   return null
 }
 
-// Syncs color vars from data into ThemeContext
 function ColorSync() {
   const { data } = useData()
   const { setColors } = useTheme()
@@ -48,7 +47,7 @@ function AppLayout() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <DataProvider>
         <ThemeProvider>
           <AppLayout />

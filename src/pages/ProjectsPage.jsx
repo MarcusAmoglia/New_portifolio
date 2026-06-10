@@ -8,6 +8,14 @@ import VideoPanel from '../components/ui/VideoPanel/VideoPanel'
 
 const ITEMS_PER_PAGE = 6
 
+// Função auxiliar para ajustar os caminhos com o Base URL do Vite
+const formatUrl = (url) => {
+  if (!url) return ''
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url
+  return `${import.meta.env.BASE_URL}${cleanUrl}`
+}
+
 const PdfViewer = ({ url, title, onClose }) => (
   <AnimatePresence>
     <motion.div
@@ -62,6 +70,8 @@ const PdfViewer = ({ url, title, onClose }) => (
 
 const ProjectCard = ({ proj, lang, index }) => {
   const [pdfOpen, setPdfOpen] = useState(false)
+  const formattedPdfUrl = formatUrl(proj.pdf)
+
   return (
     <>
       <motion.div
@@ -127,7 +137,7 @@ const ProjectCard = ({ proj, lang, index }) => {
 
       {pdfOpen && (
         <PdfViewer
-          url={proj.pdf}
+          url={formattedPdfUrl}
           title={proj.titulo?.[lang] || proj.titulo?.pt}
           onClose={() => setPdfOpen(false)}
         />
@@ -174,6 +184,7 @@ const ProjectsPage = () => {
           ))}
         </div>
 
+        {/* Paginação */}
         {totalPages > 1 && (
           <div className="flex justify-center items-center gap-2 mt-10">
             <button

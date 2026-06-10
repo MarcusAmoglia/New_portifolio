@@ -5,8 +5,18 @@ import { useTranslation } from 'react-i18next'
 import { FaTimes, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
+const formatUrl = (url) => {
+  if (!url) return ''
+  if (url.startsWith('http://') || url.startsWith('https://')) return url
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url
+  return `${import.meta.env.BASE_URL}${cleanUrl}`
+}
+
 const PdfModal = ({ cert, onClose, lang }) => {
   if (!cert) return null
+  
+  const formattedPdfUrl = formatUrl(cert.pdf)
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(0,0,0,0.95)' }} onClick={onClose}>
       <div className="relative w-full h-full max-w-5xl max-h-[92vh] rounded-2xl overflow-hidden shadow-2xl bg-white" onClick={e => e.stopPropagation()}>
@@ -16,10 +26,10 @@ const PdfModal = ({ cert, onClose, lang }) => {
         <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/40 to-transparent p-4 z-10 pointer-events-none">
           <h2 className="text-white text-sm font-semibold truncate">{cert.title?.[lang] || cert.title?.pt}</h2>
         </div>
-        <object data={cert.pdf} type="application/pdf" className="w-full h-full" title={cert.title?.[lang] || cert.title?.pt}>
+        <object data={formattedPdfUrl} type="application/pdf" className="w-full h-full" title={cert.title?.[lang] || cert.title?.pt}>
           <div className="flex flex-col items-center justify-center h-full gap-4">
             <p className="text-gray-600">Não foi possível exibir o PDF.</p>
-            <a href={cert.pdf} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold" style={{ background: 'var(--primary)', color: '#000' }}>
+            <a href={formattedPdfUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold" style={{ background: 'var(--primary)', color: '#000' }}>
               <FaExternalLinkAlt size={12} /> Abrir PDF
             </a>
           </div>
@@ -117,7 +127,7 @@ const CertificationsSection = () => {
               >
                 <div className="aspect-video relative overflow-hidden">
                   <img
-                    src={cert.preview}
+                    src={formatUrl(cert.preview)}
                     alt={cert.title?.[lang] || cert.title?.pt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={e => { e.target.src = 'https://placehold.co/400x225/0d0d1a/00eeff?text=Certificado' }}
@@ -144,11 +154,11 @@ const CertificationsSection = () => {
           </div>
         </div>
 
-        {/* Dots (opcional, mas dá uma dica visual) */}
+        {/* Dots */}
         <div className="flex justify-center gap-1.5 mt-4">
           {certifications.map((_, i) => (
             <button key={i} onClick={() => {
-              const cardWidth = 280 + 20 // largura + gap
+              const cardWidth = 280 + 20
               scrollRef.current?.scrollTo({ left: i * cardWidth, behavior: 'smooth' })
             }}>
               <span
