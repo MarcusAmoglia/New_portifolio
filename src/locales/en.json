@@ -1,0 +1,55 @@
+{
+  "navbar": {
+    "home": "Home",
+    "skills": "Skills",
+    "trajectory": "Trajectory",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Available for new challenges",
+    "atua_como": "Working as",
+    "contact_button": "Contact Me"
+  },
+  "skills": {
+    "title": "Technical & Strategic Skills",
+    "expertise": "Expertise"
+  },
+  "trajectory": {
+    "title": "Academic Background"
+  },
+  "projects": {
+    "title": "All Projects",
+    "subtitle": "Explore each project in detail"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "subtitle": "Recognized qualifications that add value to my work",
+    "view_certificate": "View certificate →"
+  },
+  "contact": {
+    "title": "Let's Talk",
+    "subtitle": "Open to opportunities and partnerships",
+    "send_email": "Send Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "Email"
+  },
+  "footer": {
+    "copyright": "Marcus Amoglia"
+  },
+  "buttons": {
+    "save": "Save",
+    "reset": "Reset",
+    "logout": "Logout",
+    "add": "Add",
+    "remove": "Remove",
+    "view_details": "Click or Enter for details"
+  },
+  "carousel": {
+    "keyboard_hint": "navigate",
+    "previous": "Previous",
+    "next": "Next"
+  }
+}

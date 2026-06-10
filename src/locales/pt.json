@@ -1,0 +1,55 @@
+{
+  "navbar": {
+    "home": "Home",
+    "skills": "Habilidades",
+    "trajectory": "Trajetória",
+    "projects": "Projetos",
+    "certifications": "Certificações",
+    "contact": "Contato"
+  },
+  "hero": {
+    "badge": "Disponível para novos desafios",
+    "atua_como": "Atuando como",
+    "contact_button": "Entre em Contato"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas & Estratégicas",
+    "expertise": "Expertise"
+  },
+  "trajectory": {
+    "title": "Formação Acadêmica"
+  },
+  "projects": {
+    "title": "Todos os Projetos",
+    "subtitle": "Explore cada projeto em detalhes"
+  },
+  "certifications": {
+    "title": "Certificações",
+    "subtitle": "Formações reconhecidas que agregam valor à minha atuação",
+    "view_certificate": "Ver certificado →"
+  },
+  "contact": {
+    "title": "Vamos Conversar",
+    "subtitle": "Aberto a oportunidades e parcerias",
+    "send_email": "Enviar E-mail",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "email": "E-mail"
+  },
+  "footer": {
+    "copyright": "Marcus Amoglia"
+  },
+  "buttons": {
+    "save": "Salvar",
+    "reset": "Resetar",
+    "logout": "Sair",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "view_details": "Clique ou Enter para detalhes"
+  },
+  "carousel": {
+    "keyboard_hint": "navegar",
+    "previous": "Anterior",
+    "next": "Próximo"
+  }
+}

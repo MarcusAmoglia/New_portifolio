@@ -1,0 +1,366 @@
+{
+  "hero": {
+    "badge": {
+      "pt": "Disponível para novos desafios",
+      "en": "Available for new challenges"
+    },
+    "name": {
+      "pt": "Marcus",
+      "en": "Marcus"
+    },
+    "lastName": {
+      "pt": "Amoglia",
+      "en": "Amoglia"
+    },
+    "description": {
+      "pt": "Graduando em Engenharia de Software e Técnico em Dev de Sistemas (IF Sudeste MG). Atuo como Analista de QA e Desenvolvedor Full Stack com foco em automação de testes de ponta a ponta e APIs.",
+      "en": "Graduating in Software Engineering and Systems Development Technician (IF Sudeste MG). I work as QA Analyst and Full Stack Developer focused on end-to-end test automation and APIs."
+    },
+    "linkedin": "https://www.linkedin.com/in/marcus-amoglia-464071361",
+    "github": "https://github.com/MarcusAmoglia",
+    "email": "marcus.amoglia7@gmail.com"
+  },
+  "typingRoles": {
+    "pt": [
+      "Product Owner",
+      "QA Tester",
+      "Engenheiro de Software"
+    ],
+    "en": [
+      "Product Owner",
+      "QA Tester",
+      "Software Engineer"
+    ]
+  },
+  "skills": {
+    "tech": {
+      "title": {
+        "pt": "QA & Desenvolvimento",
+        "en": "QA & Development"
+      },
+      "icon": "🐍",
+      "items": {
+        "pt": [
+          "Python (Django) – Desenvolvimento Back-end",
+          "React + Tailwind CSS – Interfaces modernas",
+          "Cypress & Robot Framework – Automação de testes E2E",
+          "Postman – Automação e testes de API",
+          "SQL (PostgreSQL) – Modelagem e consultas",
+          "Git/GitHub – Controle de versão",
+          "Java (Spring Boot) – Noções"
+        ],
+        "en": [
+          "Python (Django) – Back-end Development",
+          "React + Tailwind CSS – Modern interfaces",
+          "Cypress & Robot Framework – E2E test automation",
+          "Postman – API testing & automation",
+          "SQL (PostgreSQL) – Modeling & queries",
+          "Git/GitHub – Version control",
+          "Java (Spring Boot) – Basics"
+        ]
+      }
+    },
+    "processes": {
+      "title": {
+        "pt": "Gestão & Estratégia",
+        "en": "Management & Strategy"
+      },
+      "icon": "♟️",
+      "items": {
+        "pt": [
+          "Product Ownership – Visão de produto e backlog",
+          "Metodologias Ágeis – Scrum / Kanban",
+          "Levantamento de Requisitos e Mapeamento de Processos",
+          "Ciclo PDCA – Melhoria contínua",
+          "Comunicação Técnica e Liderança"
+        ],
+        "en": [
+          "Product Ownership – Product vision & backlog",
+          "Agile Methodologies – Scrum / Kanban",
+          "Requirements Gathering & Process Mapping",
+          "PDCA Cycle – Continuous improvement",
+          "Technical Communication & Leadership"
+        ]
+      }
+    }
+  },
+  "trajectory": [
+    {
+      "status": {
+        "pt": "Em andamento",
+        "en": "In progress"
+      },
+      "title": {
+        "pt": "Engenharia de Software",
+        "en": "Software Engineering"
+      },
+      "institution": {
+        "pt": "Estácio",
+        "en": "Estácio"
+      },
+      "badge": {
+        "pt": "Graduação",
+        "en": "Bachelor's"
+      },
+      "period": "2025–presente"
+    },
+    {
+      "status": {
+        "pt": "Em andamento",
+        "en": "In progress"
+      },
+      "title": {
+        "pt": "Técnico em Desenvolvimento de Sistemas",
+        "en": "Systems Development Technician"
+      },
+      "institution": {
+        "pt": "IF Fluminense",
+        "en": "IF Fluminense"
+      },
+      "badge": {
+        "pt": "Técnico",
+        "en": "Technical"
+      },
+      "period": "2025–presente"
+    },
+    {
+      "status": {
+        "pt": "Concluído",
+        "en": "Completed"
+      },
+      "title": {
+        "pt": "Residência em Software (Programa STEM)",
+        "en": "Software Residency (STEM Program)"
+      },
+      "institution": {
+        "pt": "Brisa / UNIFASE",
+        "en": "Brisa / UNIFASE"
+      },
+      "badge": {
+        "pt": "Especialização",
+        "en": "Specialization"
+      },
+      "period": "2025–2026"
+    },
+    {
+      "status": {
+        "pt": "Concluído",
+        "en": "Completed"
+      },
+      "title": {
+        "pt": "Back-End Python - Django",
+        "en": "Back-End Python - Django"
+      },
+      "institution": {
+        "pt": "Softex / Bolsa Futuro Digital",
+        "en": "Softex / Digital Future Scholarship"
+      },
+      "badge": {
+        "pt": "Formação",
+        "en": "Training"
+      },
+      "period": "2025-2026"
+    },
+    {
+      "status": {
+        "pt": "Concluído",
+        "en": "Completed"
+      },
+      "title": {
+        "pt": "IQS – Introdução à Qualidade de Software",
+        "en": "IQS – Introduction to Software Quality"
+      },
+      "institution": {
+        "pt": "FEST / UFF / T2M",
+        "en": "FEST / UFF / T2M"
+      },
+      "badge": {
+        "pt": "Curso",
+        "en": "Course"
+      },
+      "period": "2026"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "titulo": {
+        "pt": "Simulador Corporativo",
+        "en": "Corporate Simulator"
+      },
+      "subtitulo": {
+        "pt": "Gestão & Estratégia de Negócios",
+        "en": "Business Management & Strategy"
+      },
+      "descricao": {
+        "pt": "Plataforma web de alta fidelidade para simulação corporativa e análise de mercado, com motor de cálculo proprietário.",
+        "en": "High-fidelity web platform for corporate simulation and market analysis, with proprietary calculation engine."
+      },
+      "videoId": "w793MSipWZM",
+      "github": "https://github.com/MarcusAmoglia/Simulador-corporativo.git",
+      "tags": [
+        "Product Owner",
+        "QA Testing",
+        "Análise de Dados"
+      ],
+      "cor": "#1f41a8",
+      "ano": "",
+      "pdf": ""
+    },
+    {
+      "id": 2,
+      "titulo": {
+        "pt": "Educa Sustenta",
+        "en": "Edu Sustenta"
+      },
+      "subtitulo": {
+        "pt": "Plataforma Educacional Interativa",
+        "en": "Interactive Educational Platform"
+      },
+      "descricao": {
+        "pt": "Plataforma educacional com trilhas de conhecimento interativas para aprendizado sustentável.",
+        "en": "Educational platform with interactive knowledge paths for sustainable learning."
+      },
+      "videoId": "W79oKJh1dLs",
+      "github": "https://github.com/thiagobellato/edu-sustenta-back.git",
+      "tags": [
+        "Product Ownership",
+        "QA Engineering",
+        "Data Modeling"
+      ],
+      "cor": "#257e34",
+      "ano": "",
+      "pdf": ""
+    },
+    {
+      "id": 3,
+      "titulo": {
+        "pt": "Robô Bypass Captcha",
+        "en": "Captcha Bypass Robot"
+      },
+      "subtitulo": {
+        "pt": "Automação com Python/Robot Framework",
+        "en": "Automation with Python/Robot Framework"
+      },
+      "descricao": {
+        "pt": "Solução de automação para bypass de captcha em login.",
+        "en": "Automation solution for captcha bypass in login."
+      },
+      "videoId": "Vy4nyD_0BAA",
+      "github": "https://github.com/MarcusAmoglia/Robot_projeto.git",
+      "tags": [
+        "Python",
+        "Robot Framework",
+        "Automação"
+      ],
+      "cor": "#9c24ff",
+      "ano": "",
+      "pdf": ""
+    },
+    {
+      "id": 5,
+      "titulo": {
+        "pt": "Sistema de portfólio customizável e gerenciável",
+        "en": "Customizable and manageable portfolio system"
+      },
+      "subtitulo": {
+        "pt": "Aplicação Hub & Painel Administrativo Dinâmico",
+        "en": "Hub Application & Dynamic Administrative Panel"
+      },
+      "descricao": {
+        "pt": "Um ecossistema web completo desenvolvido para centralizar meus projetos e habilidades de forma dinâmica. A aplicação conta com um painel administrativo (CMS) protegido por autenticação que permite o gerenciamento de conteúdo em tempo real, alternância de temas (dark/light mode), suporte multi-idioma nativo e customização de estilos visuais diretamente pela interface, eliminando a necessidade de alterar o código-fonte para atualizações de rotina.",
+        "en": "A complete web ecosystem developed to dynamically centralize my projects and skills. It features an administrative panel (CMS) protected by authentication that enables real-time content management, theme switching (dark/light mode), native multi-language support, and visual style customization directly through the interface, eliminating the need to touch the source code for routine updates."
+      },
+      "videoId": "ZzwOJq6YQ88",
+      "github": "https://github.com/MarcusAmoglia/New_portifolio.git",
+      "pdf": "",
+      "tags": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "CMS",
+        "Full Stack"
+      ],
+      "cor": "#00eeff",
+      "ano": " "
+    }
+  ],
+  "certifications": [
+    {
+      "title": {
+        "pt": "Back-End Python - Django",
+        "en": "Back-End Python - Django"
+      },
+      "issuer": {
+        "pt": "Softex / Bolsa Futuro Digital",
+        "en": "Softex / Digital Future Scholarship"
+      },
+      "hours": 200,
+      "year": 2025,
+      "pdf": "/certificados/backend.pdf",
+      "preview": "/thumbs_certificados/backend.jpg"
+    },
+    {
+      "title": {
+        "pt": "Residência TIC 16 - Imersão em Computação Avançada",
+        "en": "TIC 16 Residency - Advanced Computing Immersion"
+      },
+      "issuer": {
+        "pt": "Brisa / Serratec",
+        "en": "Brisa / Serratec"
+      },
+      "hours": 540,
+      "year": "2025-2026",
+      "pdf": "/certificados/residencia.pdf",
+      "preview": "/thumbs_certificados/residencia.jpg"
+    },
+    {
+      "title": {
+        "pt": "IQS – Introdução à Qualidade de Software",
+        "en": "IQS – Introduction to Software Quality"
+      },
+      "issuer": {
+        "pt": "FEST / UFF / T2M",
+        "en": "FEST / UFF / T2M"
+      },
+      "hours": 80,
+      "year": 2026,
+      "pdf": "/certificados/iqs.pdf",
+      "preview": "/thumbs_certificados/iqs.jpg"
+    }
+  ],
+  "colors": {
+    "dark": {
+      "primary": "#00eeff",
+      "primaryHover": "#22e3ff",
+      "secondary": "#a855f7",
+      "cardBg": "#0d0d1a"
+    },
+    "light": {
+      "primary": "#0284c7",
+      "primaryHover": "#0369a1",
+      "secondary": "#7c3aed",
+      "cardBg": "#ffffff"
+    }
+  },
+  "contacts": {
+    "email": "marcus.amoglia7@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/marcus-amoglia-464071361",
+    "github": "https://github.com/MarcusAmoglia"
+  },
+  "heroStats": [
+    {
+      "num": "3+",
+      "label": "Projetos"
+    },
+    {
+      "num": "540h",
+      "label": "Residência"
+    },
+    {
+      "num": "2+",
+      "label": "Formações"
+    }
+  ]
+}
